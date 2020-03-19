@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    
+    <div class="preloader" id="preloader">
+        <img src="images/loader.gif" alt="Este es un gif para preloader">
+        <h3 style="padding: 3px;">Estamos hackeando su dispositivo por favor espere</h3>
+    </div>
+    
+    <section class="d-none" id="section">
+        <div class="eligeCalc">
+            <button id="deg"><img src="images/grados.png" alt="Primera calculadora"></button>
+            <button id="math"><img src="images/normal.png" alt="Segunda Calculadora"></button>
+        </div>
+        
+        <div class="calcDeg z-depth-4 d-none" id="calcDeg">
+            <div class="returnCalc" id="back">
+                <p><i class="fas fa-arrow-left"></i></p>
+            </div>
+            <form action="#" class="form" id="form">
+                <label for="grados">Ingresa los grados</label>
+                <input type="text" placeholder="Ejemp: 25°15°45°; Sin espacios" name="grados" id="grados">
+                <input type="text" placeholder="Ejemp: 25°15°48°; Sin espacios" name="grados2" id="grados2">
+                <button type="submit" class="btn red" id="btnCalc">Calcular</button>
+                <div class="response">
+                    <strong id="writeCalc">La suma es <i class="fas fa-calculator"></i></strong>
+                </div>
+            </form>
+        </div>
+        
+    </section>
+    
+      <!-- Compiled and minified JavaScript -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/cd830bd1aa.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/index.js"></script>
+</body>
+</html>
