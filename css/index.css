@@ -155,7 +155,7 @@ section .eligeCalc button:hover {
 }
 
 .form input {
-    color: #fff;
+    color: #000;
 }
 
 .form label {
@@ -164,4 +164,23 @@ section .eligeCalc button:hover {
 
 .form .response strong {
     font: Verdana;
+}
+
+audio {
+    position: relative;
+    z-index: 555;
+    width:150px;
+    height:150px
+}
+
+.completo {
+    position: fixed;
+    width: 100%;
+    height: auto;
+    display: block;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 900;
 }

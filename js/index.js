@@ -7,6 +7,8 @@ const btnCalc = document.getElementById('btnCalc') //Boton que envia los datos p
 const backCalc = document.getElementById('back') //Regresa al inico para elegir las calculadoras
 const calcDeg = document.getElementById('calcDeg') // Contenedor de la calculadora en grados
 const writeCalc = document.getElementById('writeCalc') // Escribe las repuestas
+const audio = document.getElementById('audio') // Add sound
+const video = document.getElementById('video') // Add Video
 
 // Esta función valida que se envien los datos correctos
 
@@ -26,38 +28,66 @@ function validResponse(res) {
 debugger
 
     // Si el usuario  agrega letras a los grados
-if(isNaN(grado) && isNaN(grado2) ) {
+    if(isNaN(grado) && isNaN(grado2) ) {
     
-    alert('Agrege a algun valor válido no se burro')
+        alert('Agrege a algun valor válido no se burro')
+        
+    } else if(isNaN(minutos) && isNaN(minutos2)) {
+        // Si el usuario  agrega letras en minutos
+        
+        alert('Mmmmmmmm')
+        
+    } else if(isNaN(seconds) && isNaN(seconds2)) {
     
-} else if(isNaN(minutos) && isNaN(minutos2)) {
-    // Si el usuario  agrega letras en minutos
+        alert('No agregues letras en los segundos')
     
-    alert('Mmmmmmmm')
-    
-} else if(isNaN(seconds) && isNaN(seconds2)) {
+     } else if(isNaN(grado) && grado > 1) {
 
-    alert('No agregues letras en los segundos')
+    alert('Los grados iniciales no son válidos')
+    
+            video.setAttribute('autoplay', true)
+            video.classList.add('completo')
 
- } else if (arrayNumber[0].length == 3 && arrayNumber[1].length == 3 && typeof(grado) === 'number' && typeof(minutos) === 'number' && typeof(seconds) === 'number' 
+    } else if(isNaN(grado2)){
+    
+        alert('Agregue un grado válido')
+
+    } else if(isNaN(minutos)) {
+
+        alert('Agrega minuto válido')
+
+    } else if(isNaN(minutos2) && grado > 1 && grados < 1) {
+
+        alert('Agrega minuto válido del segundo')
+
+    } else if(isNaN(seconds) && grado > 1 && grados < 1) {
+
+        alert('Agrega segundo válido')
+
+    } else if(isNaN(seconds2) && grado > 1 && grados < 1) {
+
+        alert('Agrega segundo válido para la máquina')
+
+} else if (arrayNumber[0].length == 3 && arrayNumber[1].length == 3 && typeof(grado) === 'number' && typeof(minutos) === 'number' && typeof(seconds) === 'number' 
     // Si el usuario  agrega grados, minutos, segundos en ambos inputs y si son tipo número
-        && typeof(grado2) === 'number' && typeof(minutos2) === 'number' && typeof(seconds2) === 'number') {
-
+    && typeof(grado2) === 'number' && typeof(minutos2) === 'number' && typeof(seconds2) === 'number') {
+        
         if (minutos > 60 && seconds > 60 && minutos2 > 60 && seconds2 > 60) {
-
+            
             minutos -= 60
             minutos2 -= 60
             seconds -= 60
             seconds2 -= 60
             grado += 1
-            
+
             writeCalc.innerHTML = `La suma es: ${grado + grado2}° ${minutos + minutos2}° ${seconds + seconds2}
                                    <br />
                                    La resta es: ${grado - grado2}° ${minutos - minutos2}° ${seconds - seconds2}
                                    <br />
                                    La Multiplicación es: ${grado * grado2}° ${minutos * minutos2} ${seconds * seconds2}
                                    <br />
-                                   La división es: ${(grado / grado2).toFixed(2)}° ${(minutos / minutos2).toFixed(2)}° ${(seconds / seconds2).toFixed(2)}`  
+                                   La división es: ${(grado / grado2).toFixed(2)}° ${(minutos / minutos2).toFixed(2)}° ${(seconds / seconds2).toFixed(2)}`
+
         } else if(minutos > 120 && seconds > 120 && minutos2 > 120 && seconds2 > 120) {
             
             minutos -= 120
@@ -75,15 +105,85 @@ if(isNaN(grado) && isNaN(grado2) ) {
                                    La división es: ${(grado / grado2).toFixed(2)}° ${(minutos / minutos2).toFixed(2)}° ${(seconds / seconds2).toFixed(2)}`
         
         } else if(minutos > 180 && seconds > 180 && minutos2 > 180 && seconds2 > 180) {
-            alert('Es mayor a 180 grados')
+ 
+            minutos -= 180
+            minutos2 -= 180
+            seconds -= 180
+            seconds2 -= 180
+            grado += 3
+
+            writeCalc.innerHTML = `La suma es: ${grado + grado2}° ${minutos + minutos2}° ${seconds + seconds2}
+                                   <br />
+                                   La resta es: ${grado - grado2}° ${minutos - minutos2}° ${seconds - seconds2}
+                                   <br />
+                                   La Multiplicación es: ${grado * grado2}° ${minutos * minutos2} ${seconds * seconds2}
+                                   <br />
+                                   La división es: ${(grado / grado2).toFixed(2)}° ${(minutos / minutos2).toFixed(2)}° ${(seconds / seconds2).toFixed(2)}`
+
         } else if(minutos > 240 && seconds > 240 && minutos2 > 240 && seconds2 > 240) {
-            alert('Es mayor a 240 grados')
+             
+            minutos -= 240
+            minutos2 -= 240
+            seconds -= 240
+            seconds2 -= 240
+            grado += 4
+
+            writeCalc.innerHTML = `La suma es: ${grado + grado2}° ${minutos + minutos2}° ${seconds + seconds2}
+                                   <br />
+                                   La resta es: ${grado - grado2}° ${minutos - minutos2}° ${seconds - seconds2}
+                                   <br />
+                                   La Multiplicación es: ${grado * grado2}° ${minutos * minutos2} ${seconds * seconds2}
+                                   <br />
+                                   La división es: ${(grado / grado2).toFixed(2)}° ${(minutos / minutos2).toFixed(2)}° ${(seconds / seconds2).toFixed(2)}`
+
         } else if(minutos > 300 && seconds > 300 && minutos2 > 300 && seconds2 > 300) {
-            alert('Es mayor a 300 grados')
+ 
+            minutos -= 300
+            minutos2 -= 300
+            seconds -= 300
+            seconds2 -= 300
+            grado += 5
+
+            writeCalc.innerHTML = `La suma es: ${grado + grado2}° ${minutos + minutos2}° ${seconds + seconds2}
+                                   <br />
+                                   La resta es: ${grado - grado2}° ${minutos - minutos2}° ${seconds - seconds2}
+                                   <br />
+                                   La Multiplicación es: ${grado * grado2}° ${minutos * minutos2} ${seconds * seconds2}
+                                   <br />
+                                   La división es: ${(grado / grado2).toFixed(2)}° ${(minutos / minutos2).toFixed(2)}° ${(seconds / seconds2).toFixed(2)}`
+
         } else if(minutos > 360 && seconds > 360 && minutos2 > 360 && seconds2 > 360) {
-            alert('No se puede calcular si es mayor a 360 grados')
+            
+            minutos -= 360
+            minutos2 -= 360
+            seconds -= 360
+            seconds2 -= 360
+            grado += 6
+
+            writeCalc.innerHTML = `La suma es: ${grado + grado2}° ${minutos + minutos2}° ${seconds + seconds2}
+                                   <br />
+                                   La resta es: ${grado - grado2}° ${minutos - minutos2}° ${seconds - seconds2}
+                                   <br />
+                                   La Multiplicación es: ${grado * grado2}° ${minutos * minutos2} ${seconds * seconds2}
+                                   <br />
+                                   La división es: ${(grado / grado2).toFixed(2)}° ${(minutos / minutos2).toFixed(2)}° ${(seconds / seconds2).toFixed(2)}`
+
         } else if(minutos > 60 && seconds > 60 && minutos2 < 60 && seconds2 < 60) {
-            alert('error xdxdxdxd')
+            
+            minutos -= 60
+            minutos2 -= 60
+            seconds -= 3600
+            seconds2 -= 3600
+            grado += 1
+
+            writeCalc.innerHTML = `La suma es: ${grado + grado2}° ${minutos + minutos2}° ${seconds + seconds2}
+                                   <br />
+                                   La resta es: ${grado - grado2}° ${minutos - minutos2}° ${seconds - seconds2}
+                                   <br />
+                                   La Multiplicación es: ${grado * grado2}° ${minutos * minutos2} ${seconds * seconds2}
+                                   <br />
+                                   La división es: ${(grado / grado2).toFixed(2)}° ${(minutos / minutos2).toFixed(2)}° ${(seconds / seconds2).toFixed(2)}`
+
         }
 
 
